@@ -7,7 +7,7 @@ function App() {
 	const [ home, setHome ] = useState("")
 
 	useEffect(() => {
-		axios.get("http://localhost:4000/home").then(function(response) {
+		axios.get("/home").then(function(response) {
 			setHome(response.data)
 		})
 	}, [])
@@ -15,7 +15,7 @@ function App() {
 	async function postName(e) {
 		e.preventDefault()
 		try {
-			await axios.post("http://localhost:4000/post_name", {
+			await axios.post("/post_name", {
 				name
 			})
 		} catch (error) {
